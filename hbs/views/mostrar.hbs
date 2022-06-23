@@ -1,0 +1,36 @@
+<div style="background-color: grey; width: 900px; height: 500px; margin: 0px auto; border: 1px solid black;">
+<a class="nav-link active" aria-current="page" href="/">Home</a>
+
+
+{{#if Tienda}}
+    
+    <table class="table table-bordered border-dark" style="margin:3rem 0;">
+        <thead class="thead-dark" style="background-color:aliceblue ;">
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each Tienda}}
+
+                <tr scope="row">
+                    <td>
+                            {{producto}} 
+                    </td>
+                    <td>
+                            {{precio}}
+                    </td>
+                    <td>
+                        <img src= {{thumbnail}}   alt= {{producto}} style="width:3rem;">
+                    </td>
+                    
+                </tr>  
+            
+            {{/each}}
+        </tbody>
+    </table>
+    {{else }}
+    <p style="color: white;">No hay ninguna producto :(</p>
+{{/if}}
